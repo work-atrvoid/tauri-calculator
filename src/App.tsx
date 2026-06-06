@@ -5,10 +5,8 @@ import "./App.css";
 function formatNumber(num: number): string {
   if (!isFinite(num)) return "Error";
 
-  // عدد صحیح
   if (Number.isInteger(num)) return num.toString();
 
-  // اعشار محدود + حذف صفر اضافی
   return parseFloat(num.toFixed(10)).toString();
 }
 
