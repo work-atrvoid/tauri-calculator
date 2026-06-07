@@ -1,7 +1,9 @@
 <div align="center"><h1>Tauri Calculator</h1></div>
-<div align="center"><img src="./screenshot.png" title="" alt="" data-align="center"></div>
+
+<div align="center"><img src="./screenshot.png" title="" alt="" width="25%" data-align="center"></div>
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)    ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)    ![Tauri](https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF)
+
 This project is a cross-platform calculator built using Tauri, React (TypeScript), and Rust as part of a university assignment.  
 It demonstrates how a modern frontend can be combined with a high-performance Rust backend to perform arithmetic operations.
 
