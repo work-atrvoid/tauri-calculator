@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+<div align="center"><h1>Tauri Calculator</h1></div>
+<div align="center"><img src="./screenshot.png" title="" alt="" data-align="center"></div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)    ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)    ![Tauri](https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF)
+This project is a cross-platform calculator built using Tauri, React (TypeScript), and Rust as part of a university assignment.  
+It demonstrates how a modern frontend can be combined with a high-performance Rust backend to perform arithmetic operations.
 
-Currently, two official plugins are available:
+The project also supports Android build using Tauri Android tools.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<div align="center"><h3>Features</h3></div><hr>
 
-## React Compiler
+- Basic arithmetic operations:
+  - Addition (+)
+  - Subtraction (-)
+  - Multiplication (*)
+  - Division (/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Rust-powered backend for calculations
+- Error handling (e.g. divide by zero, invalid operator)
+- Clean and responsive UI
+- Cross-platform support (Desktop + Android)
 
-## Expanding the ESLint configuration
+<div align="center"><h3>Tech Stack</h3></div><hr>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Frontend: React + TypeScript
+- Backend: Rust
+- Framework: Tauri
+- Styling: CSS (Grid + Flexbox)
+- Mobile: Tauri Android
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<div align="center"><h3>Project Structure</h3></div><hr>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+calculator/
+│
+├── src/                 # React frontend
+│   ├── App.tsx
+│   ├── App.css
+│   └── main.tsx
+│
+├── src-tauri/           # Rust backend
+│   ├── src/
+│   │   ├── main.rs
+│   │   └── lib.rs
+│
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<div align="center"><h3>How It Works</h3></div><hr>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- User interacts with the calculator UI (React)
+- Input is stored in state
+- On "=" press, React calls Rust using Tauri `invoke`
+- Rust performs the calculation
+- Result is returned and displayed in UI
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<div align="center"><h3>Build From Source</h3></div><hr>
+
+Before building, make sure you have installed all Tauri prerequisites([Full setup guide](https://tauri.app/start/prerequisites/)):
+* Rust (latest stable)
+* Node.js (LTS)
+* Tauri CLI
+* Android build tools (optional, for Android build)
+
+1. Clone the repository
+
+    ```bash
+    git clone https://github.com/your-username/tauri-calculator.git
+    ```
+    
+2. Navigate to the project directory
+
+    ```bash
+    cd tauri-calculator
+    ```
+
+3. Install frontend dependencies
+
+    ```bash
+    npm install
+    ```
+
+- Build for Production (Desktop)
+
+    ```bash
+    cargo tauri build
+    ```
+
+ - Build for Android
+
+    ```bash
+    cargo tauri android build
+    ```
+
+
+<div align="center"><h3>Acknowledgements</h3></div><hr>
+
+This project was developed by Mohammad Amin Asli as part of a university assignment.
+Special thanks to ChatGPT for assistance during development and guidance.
+
+<div align="center"><h3>License</h3></div><hr>
+
+This project is licensed under the **MIT License**.
