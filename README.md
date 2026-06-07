@@ -58,7 +58,7 @@ calculator/
 
 <div align="center"><h3>Build From Source</h3></div><hr>
 
-Before building, make sure you have installed all Tauri prerequisites([Full setup guide](https://tauri.app/start/prerequisites/)):
+Before building, make sure you have installed all Tauri prerequisites ([Full setup guide](https://tauri.app/start/prerequisites/)):
 * Rust (latest stable)
 * Node.js (LTS)
 * Tauri CLI
